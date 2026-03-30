@@ -5,11 +5,10 @@ module dff_v(CLK, RESET, D, Q);
     output Q;
     reg Q;
 
-always @(posedge CLK or posedge RESET)
-begin
-    if (RESET)
-        Q <= 0;
-    else
-        Q <= D;
-end
+    always @(posedge CLK or posedge RESET) begin
+        if (RESET)
+            Q <= 0;
+        else
+            Q <= D;
+    end
 endmodule
