@@ -1,6 +1,8 @@
 -- Testbench for VHDL two-bit greater-than comparator               -- 1
+-- This is used in behavioral simulation
 library ieee;                                                       -- 2
 use ieee.std_logic_1164.all, ieee.std_logic_unsigned.all;           -- 3
+use ieee.numeric_std.all, ieee.std_logic_textio.all;
                                                                     -- 4
 entity greater_testbench is                                         -- 5
 end greater_testbench;                                              -- 6
@@ -17,8 +19,14 @@ signal struct_out: std_logic;                                       -- 10
     end component;                                                  -- 15
 begin                                                               -- 16
 u1: comparator_greater_than_structural port map(A,B, struct_out);   -- 17
+monitor_proc: process(A)
+begin
+    report "This prints anytime A changes. A = " & to_hstring(A);
+end process;
 tb: process                                                         -- 18
 begin                                                               -- 19
+    -- Newlines automatically appended
+    report "This is a one-time message.";
     A <= "10";                                                      -- 20
     B <= "00";                                                      -- 21
     wait for 10 ns;                                                 -- 22
