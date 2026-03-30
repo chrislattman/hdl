@@ -4,7 +4,7 @@ module count_4_r_v(CLK, RESET, EN, Q, CO);
     output [3:0] Q;
     output CO;
     reg [3:0] Q;
-    assign CO = (count == 4'b1111 && EN == 1’b1) ? 1 : 0;
+    assign CO = (Q == 4'b1111 && EN == 1’b1) ? 1 : 0;
 
 always @(posedge CLK or posedge RESET)
 begin
