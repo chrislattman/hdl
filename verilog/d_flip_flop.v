@@ -2,8 +2,7 @@
 // Verilog Process Description
 module dff_v(CLK, RESET, D, Q);
     input CLK, RESET, D;
-    output Q;
-    reg Q;
+    output reg Q;
 
     always @(posedge CLK or posedge RESET) begin
         if (RESET)
