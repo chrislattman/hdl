@@ -2,7 +2,7 @@
 module srg_4_r_v(CLK, RESET, SI, Q, SO);
     input CLK, RESET, SI;
     output reg [3:0] Q;
-    output SO;
+    output wire SO;
 
     assign SO = Q[3];
 

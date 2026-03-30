@@ -2,9 +2,9 @@
 module count_4_r_v(CLK, RESET, EN, Q, CO);
     input CLK, RESET, EN;
     output reg [3:0] Q;
-    output CO;
+    output wire CO;
 
-    assign CO = (Q == 4'b1111 && EN == 1’b1) ? 1 : 0;
+    assign CO = (Q == 4'b1111 && EN == 1'b1) ? 1 : 0;
 
     always @(posedge CLK or posedge RESET) begin
         if (RESET)

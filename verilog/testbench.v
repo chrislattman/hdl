@@ -4,8 +4,8 @@ module comparator_testbench_verilog();                          // 3
     reg [1:0] A, B;                                             // 4
     wire struct_out;                                            // 5
     comparator_greater_than_structural U1(A, B, struct_out);    // 6
-    initial                                                     // 7
-    begin                                                       // 8
+
+    initial begin                                               // 8
         // Newlines automatically appended                      // 9
         $display("This is a one-time message.");                // 10
         $monitor("This prints anytime A changes. A = %b", A);   // 11
