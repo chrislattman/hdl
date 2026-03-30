@@ -13,6 +13,5 @@ module comparator_testbench_verilog();                          // 2
         B = 2'b10;                                              // 13
         #10;                                                    // 14
         B = 2'b11;                                              // 15
-        $stop; // halt the process                              // 16
-    end                                                         // 17
-endmodule                                                       // 18
+    end // process halts by default                             // 16
+endmodule                                                       // 17
